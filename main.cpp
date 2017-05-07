@@ -8,6 +8,7 @@
 
 #include <iostream>
 #include <cmath>
+#include <memory>
 using namespace std;
 
 //funtion for spacing between data in console
@@ -40,21 +41,21 @@ class Sphere{
 
 int main() {
     
-    Sphere sphere;
+    unique_ptr<Sphere> sphere(new Sphere);
     
-    sphere.setX(4);
-    sphere.setY(4);
-    sphere.setZ(4);
-    sphere.setRadius(4);
+    sphere -> setX(4);
+    sphere -> setY(4);
+    sphere -> setZ(4);
+    sphere -> setRadius(4);
     
-    cout << "Sphere X: " << sphere.showX() << endl;
-    cout << "Sphere Y: " << sphere.showY() << endl;
-    cout << "Sphere Z: " << sphere.showZ() << endl;
-    cout << "Sphere radius: " << sphere.showRadius();
+    cout << "Sphere X: " << sphere -> showX() << endl;
+    cout << "Sphere Y: " << sphere -> showY() << endl;
+    cout << "Sphere Z: " << sphere -> showZ() << endl;
+    cout << "Sphere radius: " << sphere -> showRadius();
     dblBrk();
     
-    cout << "The volume of the sphere is: " << sphere.showVolume() << endl;
-    cout << "The surface area of the sphere is: " << sphere.showSurfaceArea();
+    cout << "The volume of the sphere is: " << sphere -> showVolume() << endl;
+    cout << "The surface area of the sphere is: " << sphere -> showSurfaceArea();
     dblBrk();
 }
 
